@@ -1,6 +1,6 @@
 import React from 'react';
-import {BurgerMenu, LinkSidebar, Navbar, Sidebar} from "./components";
-import {Overlay} from "./components/overlay/Overlay.component";
+import {BurgerMenu, LinkSidebar, Navbar, Overlay, Sidebar} from "./components";
+import {Header} from "./components/header/Header.component";
 
 function App() {
     const [sidebarVisible, setSidebarVisible] = React.useState(false);
@@ -15,13 +15,20 @@ function App() {
                 ]}
             />
 
-            <Overlay isVisible={sidebarVisible} onClose={() => setSidebarVisible(false)}/>
+            <Overlay
+                isVisible={sidebarVisible}
+                onClose={() => setSidebarVisible(false)}
+            />
 
-            <Navbar links={[
-                <BurgerMenu onClick={() => {
-                    setSidebarVisible(!sidebarVisible);
-                }}/>,
-            ]}/>
+            <Navbar
+                links={[
+                    <BurgerMenu onClick={() => {
+                        setSidebarVisible(!sidebarVisible);
+                    }}/>,
+                ]}
+            />
+
+            <Header/>
         </div>
     );
 }
