@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BurgerMenu, LinkSidebar, Navbar, Sidebar} from "./components";
+import {Overlay} from "./components/overlay/Overlay.component";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [sidebarVisible, setSidebarVisible] = React.useState(false);
+
+    return (
+        <div className="App">
+            <Sidebar
+                isVisible={sidebarVisible}
+                onClose={() => setSidebarVisible(false)}
+                links={[
+                    <LinkSidebar href="#">Page 2</LinkSidebar>,
+                ]}
+            />
+
+            <Overlay isVisible={sidebarVisible} onClose={() => setSidebarVisible(false)}/>
+
+            <Navbar links={[
+                <BurgerMenu onClick={() => {
+                    setSidebarVisible(!sidebarVisible);
+                }}/>,
+            ]}/>
+        </div>
+    );
 }
 
 export default App;
