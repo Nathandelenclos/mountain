@@ -2,6 +2,7 @@
   "name": "mountain",
   "version": "0.1.0",
   "private": true,
+  "homepage": "mountain",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
