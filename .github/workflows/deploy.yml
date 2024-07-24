@@ -1,0 +1,18 @@
+on:
+  push:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install dependencies
+        run: npm i
+      - name: build
+        run: npm run build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          folder: build

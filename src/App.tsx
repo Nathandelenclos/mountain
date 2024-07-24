@@ -1,6 +1,5 @@
 import React from 'react';
-import {BurgerMenu, LinkSidebar, Navbar, Overlay, Sidebar} from "./components";
-import {Header} from "./components/header/Header.component";
+import {BurgerMenu, Header, LinkSidebar, Navbar, Overlay, Sidebar} from "./components";
 
 function App() {
     const [sidebarVisible, setSidebarVisible] = React.useState(false);
@@ -29,6 +28,7 @@ function App() {
             />
 
             <Header/>
+
         </div>
     );
 }
