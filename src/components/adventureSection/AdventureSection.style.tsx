@@ -3,13 +3,16 @@ import styled from "styled-components";
 export const Container = styled.section`
     background-color: #292d33;
     display: flex;
+
     flex-direction: row;
     padding: 0 20%;
     @media (max-width: 768px) {
         padding: 0 10%;
+        flex-wrap: wrap;
     }
     @media (max-width: 480px) {
         padding: 0 0;
+        flex-wrap: wrap;
     }
 `;
 
