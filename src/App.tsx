@@ -1,5 +1,5 @@
 import React from 'react';
-import {AdventureSection, BurgerMenu, Header, LinkSidebar, Navbar, Overlay, Sidebar} from "./components";
+import {AdventureSection, BurgerMenu, Header, LinkSidebar, Navbar, Overlay, Sidebar, WatchWorld} from "./components";
 
 function App() {
     const [sidebarVisible, setSidebarVisible] = React.useState(false);
@@ -30,6 +30,8 @@ function App() {
             <Header/>
 
             <AdventureSection/>
+
+            <WatchWorld/>
         </div>
     );
 }
